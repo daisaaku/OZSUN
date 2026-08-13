@@ -49,7 +49,6 @@
             transform: scale(1.05);
         }
 
-        /* ゲーム本編用UI */
         #ui-overlay {
             position: absolute;
             top: 15px;
@@ -105,7 +104,6 @@
 <body>
 
 <div id="start-screen">
-
     <h1 style="font-size: 38px; color: #00ffff; text-shadow: 0 0 15px rgba(0,255,255,0.5);">
         お<span class="glitch-char">じ</span>さん寿司フェスティバル
     </h1>
@@ -115,7 +113,7 @@
     <button class="start-btn" onclick="startGameWithJumpScare()">GAME START</button>
 
     <div style="position: absolute; bottom: 20px; color: #404060; font-size: 11px;">
-        v1.0.0 - © 2026 [ばばっばｂそいあｈｆしょあｈｓ＠ｇこーぽれーしょん]
+        v1.0.4 - © 202X [だれかみている]
     </div>
 </div>
 
@@ -150,7 +148,12 @@ let gameStarted = false;
 setInterval(() => {
     if (gameStarted) return;
     const notice = document.getElementById('notice-text');
-    const alters = ["[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありません。]", "[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありま....ｓ]", "[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありす。]", "[注意: 本作はフィクションでやんす。実在する人物、団体、事件等には一切関係ありません。]"];
+    const alters = [
+        "[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありません。]",
+        "[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありま....ｓ]",
+        "[注意: 本作はフィクションです。実在する人物、団体、事件等には一切関係ありす。]",
+        "[注意: 本作はフィクションでやんす。実在する人物、団体、事件等には一切関係ありません。]"
+    ];
     notice.innerText = alters[Math.floor(Math.random() * alters.length)];
 }, 2500);
 
